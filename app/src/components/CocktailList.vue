@@ -1,7 +1,7 @@
 <template>
   <div class="cocktail">
 
-    <section>
+    <section class="cocktail-section">
       <Cocktail
         v-for="cocktail in cocktails"
         :key="cocktail.name"
@@ -9,10 +9,10 @@
         />
     </section>
 
-    <section>
+    <section class="form-section">
       <AddCocktail :onAdd="handleAdd"/>
     </section>
-    
+
   </div>
 </template>
 
@@ -56,7 +56,15 @@ export default {
 
 .cocktail {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
+.cocktail-section {
+  margin-left: 50px;
+}
+
+.form-section {
+  margin-left: 50px;
+  margin-right: 50px;
+}
 </style>

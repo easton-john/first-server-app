@@ -7,7 +7,7 @@
       <li><b style="color:burlywood">Main Ingredients:</b> {{ cocktail.ingredients }}</li>
       <li><b style="color:burlywood">Served:</b> {{ cocktail.served }}</li>
       <li><b style="color:burlywood">Standard garnish:</b> {{ cocktail.garnish }}</li>
-      <li><b style="color:burlywood">Tried:</b> {{ cocktail.tried }}</li>
+      <li><b style="color:burlywood">Tried: </b> <span v-if="cocktail.tried">Yes</span> <span v-else>No</span></li>
     </ul>
 
     <img :src="cocktail.image"> 

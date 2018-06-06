@@ -1,7 +1,7 @@
 <template>
   <div class="form">
 
-    <h2 id="add-cocktail">Add a Cocktail</h2>
+    <h2 id="add-cocktail">Create a Cocktail</h2>
 
     <form @submit.prevent="handleSubmit">
       <input id="name" type="text" name="name" placeholder="Name" required v-model="cocktail.name">
@@ -10,11 +10,15 @@
       <input type="text" name="served" placeholder="Served" v-model="cocktail.served">
       <input type="text" name="garnish" placeholder="Garnish" v-model="cocktail.garnish">
       <input type="text" name="image" placeholder="Enter image url" v-model="cocktail.image">
-      <select v-model="cocktail.tried">
+      
+      <label>Tried before?
+      <input id="checkbox" type="checkbox" name="tried" v-model="cocktail.tried">
+      </label>
+      <!-- <select v-model="cocktail.tried">
         <option value disabled>Tried?</option>
-        <option value="Yes!">Yes</option>
-        <option value="No? What are you waiting for?">No</option>
-      </select>
+        <option capture=true>Yes</option>
+        <option capture=false>No</option>
+      </select> -->
       <button type="submit">Enter</button>
     </form>
 
@@ -77,17 +81,17 @@ export default {
   color: whitesmoke;
   background: rgba(0, 0, 0, .70);
   padding: 10px;
+  margin-top: 0px;
   margin-bottom: 10px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 input {
-  font-size: 1.5em;
+  font-size: 1.75em;
   padding-left: .25em;
   border-top: none;
   margin-bottom: 10px;
@@ -105,6 +109,15 @@ button {
   background: rgba(0, 0, 0, .80);
   border: none;
   border-radius: 5px;
+}
+
+label {
+  color: whitesmoke;
+  background: rgba(0, 0, 0, .80);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  padding-top: .25em;
+  padding-left: .25em;
 }
 
 </style>
