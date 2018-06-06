@@ -1,13 +1,17 @@
 <template>
-  <section>
-    <Cocktail
-      v-for="cocktail in cocktails"
-      :key="cocktail.name"
-      :cocktail="cocktail"
-      />
+  <div class="cocktail">
+    <section>
+      <Cocktail
+        v-for="cocktail in cocktails"
+        :key="cocktail.name"
+        :cocktail="cocktail"
+        />
+    </section>
 
+    <section>
       <AddCocktail :onAdd="handleAdd"/>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -47,5 +51,10 @@ export default {
 </script>
 
 <style>
+
+.cocktail {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 </style>

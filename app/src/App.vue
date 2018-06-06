@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-div">
     <h1>Cocktails</h1>
     <CocktailList />
   </div>
@@ -18,5 +18,18 @@ export default {
 </script>
 
 <style>
-
+html {
+  background-image: url('./assets/background.jpg');
+  background-attachment: fixed;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 4em;
+  color: whitesmoke;
+}
+.main-div {
+  display: flex;
+  flex-direction: column;
+}
 </style>
