@@ -25,5 +25,14 @@
     "garnish": "Sprig of mint, Yerba buena",
     "tried": true,
     "image": "https://cdn.liquor.com/wp-content/uploads/2017/03/07152909/mojito-720x720-recipe.jpg"
+  },
+  {
+    "name": "Bloody Mary",
+    "alcohol": "Vodka",
+    "ingredients": "Vodka, Tomato juice",
+    "served": "On the rocks",
+    "garnish": "Celery, Olive",
+    "tried": "Yes!",
+    "image": ""
   }
 ]

@@ -1,5 +1,6 @@
 <template>
   <div class="cocktail">
+
     <section>
       <Cocktail
         v-for="cocktail in cocktails"
@@ -11,6 +12,7 @@
     <section>
       <AddCocktail :onAdd="handleAdd"/>
     </section>
+    
   </div>
 </template>
 
