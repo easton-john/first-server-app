@@ -1,18 +1,19 @@
 <template>
-  <div>
-    <section>
-      <Cocktail
-        v-for="cocktail in cocktails"
-        :key="cocktail.name"
-        :cocktail="cocktail"
-       />
-    </section>
-  </div>
+  <section>
+    <Cocktail
+      v-for="cocktail in cocktails"
+      :key="cocktail.name"
+      :cocktail="cocktail"
+      />
+
+      <AddCocktail :onAdd="handleAdd"/>
+  </section>
 </template>
 
 <script>
 import Cocktail from './Cocktail';
-import { getCocktails } from '../services/api';
+import AddCocktail from './AddCocktail';
+import { getCocktails, addCocktail } from '../services/api';
 
 export default {
 
@@ -25,11 +26,22 @@ export default {
   created() {
     getCocktails()
       .then(cocktails => {
-        this.cocktails = cocktails.cocktails;
+        this.cocktails = cocktails;
       });
   },
+
+  methods: {
+    handleAdd(cocktail) {
+      return addCocktail(cocktail)
+        .then(saved => {
+          this.cocktails.push(saved);
+        });
+    }
+  },
+
   components: {
-    Cocktail
+    Cocktail,
+    AddCocktail
   }
 };
 </script>

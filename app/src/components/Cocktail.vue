@@ -5,6 +5,7 @@
       <li><b>Alcohol:</b> {{ cocktail.alcohol }}</li>
       <li><b>Main Ingredients:</b> {{ cocktail.ingredients }}</li>
       <li><b>Served:</b> {{ cocktail.served }}</li>
+      <li><b>Standard garnish:</b> {{ cocktail.garnish }}</li>
       <li><b>Tried?</b> {{ cocktail.tried }}</li>
     </ul>
     <img :src="cocktail.image">

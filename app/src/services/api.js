@@ -4,3 +4,12 @@ export function getCocktails() {
   })
     .then(response => response.json());
 }
+
+export function addCocktail(cocktail) {
+  return fetch('http://localhost:3000/api/cocktails', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(cocktail)
+  })
+    .then(response => response.json());
+}
