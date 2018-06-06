@@ -14,11 +14,7 @@
       <label>Tried before?
       <input id="checkbox" type="checkbox" name="tried" v-model="cocktail.tried">
       </label>
-      <!-- <select v-model="cocktail.tried">
-        <option value disabled>Tried?</option>
-        <option capture=true>Yes</option>
-        <option capture=false>No</option>
-      </select> -->
+      
       <button type="submit">Enter</button>
     </form>
 
