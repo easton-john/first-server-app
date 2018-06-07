@@ -46,7 +46,6 @@ export default {
     },
 
     handleDelete(cocktail) {
-      console.log(cocktail);
       return deleteCocktail(cocktail)
         .then(() => {
           getCocktails()

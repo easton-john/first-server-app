@@ -12,7 +12,7 @@
       <input type="text" name="image" placeholder="Enter image url" v-model="cocktail.image">
       
       <label>Tried before?
-      <input id="checkbox" type="checkbox" name="tried" v-model="cocktail.tried">
+      <input type="checkbox" v-model="cocktail.tried">
       </label>
       
       <button id="form-button" type="submit">Enter</button>
@@ -30,7 +30,7 @@ const initCocktail = () => {
     ingredients: '',
     served: '',
     garnish: '',
-    tried: '',
+    tried: false,
     image: ''
 
   };
