@@ -18,7 +18,9 @@ client.connect();
 app.get('/api/cocktails', (req, res) => {
 
   client.query(`
-  SELECT * from cocktails;
+  SELECT 
+  
+  FROM cocktails;
   `).then(result => {
     res.send(result.rows);
   });
@@ -43,7 +45,7 @@ app.post('/api/cocktails', (req, res) => {
 
 app.delete('/api/cocktails/:id', (req, res) => {
   const params = req.params.id;
-  
+
   client.query(`
     DELETE FROM cocktails 
       WHERE id=$1;
