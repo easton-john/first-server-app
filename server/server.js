@@ -42,13 +42,14 @@ app.post('/api/cocktails', (req, res) => {
 });
 
 app.delete('/api/cocktails/:id', (req, res) => {
-  const row = req.params.id;
+  const params = req.params.id;
+  console.log(req);
 
   client.query(`
     DELETE FROM cocktails 
-      WHERE id = $1
+      WHERE id=($1)
     `,
-  [row]).then(() => {
+  [params]).then(() => {
   
     res.send({ removed: true });
   });
