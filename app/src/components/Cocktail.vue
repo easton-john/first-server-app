@@ -1,37 +1,72 @@
 <template>
-  <div>
-
-    <ul>
+  <li>
+    <section v-if="!editing">
+      <img :src="cocktail.image">
       <h2><b>{{ cocktail.name }}</b></h2>
-      <li><b style="color:burlywood">Alcohol:</b> {{ cocktail.alcohol }}</li>
-      <li><b style="color:burlywood">Main Ingredients:</b> {{ cocktail.ingredients }}</li>
-      <li><b style="color:burlywood">Served:</b> {{ cocktail.served }}</li>
-      <li><b style="color:burlywood">Standard garnish:</b> {{ cocktail.garnish }}</li>
-      <li><b style="color:burlywood">Tried: </b> <span v-if="cocktail.tried">Yes</span> <span v-else>No</span></li>
-      <button @click.prevent="handleRemove" type="submit">DELETE</button> 
-    </ul>
+      <p><b>Alcohol:</b> {{ alcohol }}</p>
+      <p><b>Main Ingredients:</b> {{ cocktail.ingredients }}</p>
+      <p><b>Served:</b> {{ cocktail.served }}</p>
+      <p><b>Standard garnish:</b> {{ cocktail.garnish }}</p>
+      <p><b>Tried: </b> <span v-if="cocktail.tried">Yes</span> <span v-else>No</span></p>    
+    </section>
 
-    <img :src="cocktail.image">
+    <CocktailForm
+    v-else
+    label="Update"
+    header=""
+    :cocktail="cocktail"
+    :alcohols="alcohols"
+    :onEdit="handleUpdate"
+    />
 
-  </div>
+
+    <button @click="editing = !editing">{{ editing ? 'Cancel' : 'Edit' }}</button>
+    <button @click="handleRemove" type="submit">DELETE</button> 
+
+  </li>
 </template>
 
 <script>
+import CocktailForm from './CocktailForm';
 
 export default {
+
+  data() {
+    return {
+      editing: false
+    };
+  },  
+
+  computed: {
+    alcohol() {
+      if(!this.alcohols) return null;
+      const alcohol = this.alcohols.find(a => a.id === this.cocktail.alcoholID);
+      return alcohol ? alcohol.alcohol : 'Unknown';
+    }
+  },
 
   methods: {
     handleRemove() {
       return this.onDelete(this.cocktail);
+    },
+
+    handleUpdate(toUpdate) {
+      return this.onUpdate(toUpdate)
+        .then(() => {
+          this.editing = false;
+        });
     }
   },
 
-  props: {
-    onDelete: {
-      type: Function,
-      required: true
-    },
-    cocktail: Object,
+  props: [
+    'onDelete',
+    'onUpdate',
+    'cocktail',
+    'alcohols',
+  ],
+
+  components: {
+    CocktailForm
   }
 };
 
@@ -39,38 +74,17 @@ export default {
 
 <style scoped>
 
-h2 {
-  color: mediumseagreen;
-  margin-top: 0;
-}
-
-ul {
-  list-style-type: none;
-  width: 50%;
-  margin: 0;
-  padding: 0;
-  font-size: 1.25em;
-  font-family: 'Song Myung', serif;
-}
-
 li {
-  color: whitesmoke;
-  margin-bottom: 2px;
+  margin-bottom: 50px;
 }
 
 img {
-  display: flex;
-  align-self: center;
-  width: 225px;
+  float: right;
+  width: 250px;
 }
 
-div {
-  display: flex;
-  justify-content: space-around;
-  background: rgba(0, 0, 0, .85);
-  border-radius: 5px;
-  padding: 20px 0px 20px 10px;
-  margin-bottom: 20px;
+button {
+  margin-right: 10px;
 }
 
 </style>

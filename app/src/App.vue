@@ -22,22 +22,9 @@ export default {
 
 <style>
 
-html {
-  background-image: url('./assets/background.jpg');
-  background-attachment: fixed;
-}
-
 h1 {
-  display: flex;
-  justify-content: center;
-  font-size: 4em;
-  color: whitesmoke;
-  font-family: 'Cinzel Decorative', cursive;
-}
-
-.main-div {
-  display: flex;
-  flex-direction: column;
+  text-align: center;
+  font-size: 3em;
 }
 
 </style>

@@ -1,32 +1,42 @@
 <template>
   <div class="cocktail">
 
-    <section class="cocktail-section">
+    <ul class="cocktail-section">
       <Cocktail
         v-for="cocktail in cocktails"
         :key="cocktail.name"
         :cocktail="cocktail"
+        :alcohols="alcohols"
         :onDelete="handleDelete"
+        :onUpdate="handleUpdate"
         />
-    </section>
+    </ul>
 
-    <section class="form-section">
-      <AddCocktail :onAdd="handleAdd"/>
-    </section>
+    <CocktailForm
+    label="Add"
+    header="Create a new cocktail"
+    :onEdit="handleAdd"
+    />
 
   </div>
 </template>
 
 <script>
 import Cocktail from './Cocktail';
-import AddCocktail from './AddCocktail';
-import { getCocktails, addCocktail, deleteCocktail } from '../services/api';
+import CocktailForm from './CocktailForm';
+import { 
+  getCocktails, 
+  addCocktail, 
+  deleteCocktail,
+  getAlcohols,
+  updateCocktail } from '../services/api';
 
 export default {
 
   data() {
     return {
-      cocktails: null
+      cocktails: null,
+      alcohols: null
     };
   },
 
@@ -34,6 +44,11 @@ export default {
     getCocktails()
       .then(cocktails => {
         this.cocktails = cocktails;
+      });
+
+    getAlcohols()
+      .then(alcohols => {
+        this.alcohols = alcohols;
       });
   },
 
@@ -53,29 +68,34 @@ export default {
               this.cocktails = cocktails;
             });
         });
+    },
+
+    handleUpdate(toUpdate) {
+      return updateCocktail(toUpdate)
+        .then(updated => {
+          this.cocktails = this.cocktails.map(cocktail => {
+            return cocktail.id === updated.id ? updated : cocktail;
+          });
+        });
     }
   },
 
   components: {
     Cocktail,
-    AddCocktail
+    CocktailForm
   }
 };
 </script>
 
-<style>
+<style scoped>
 
-.cocktail {
+div {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
-.cocktail-section {
-  margin-left: 50px;
+ul {
+  list-style-type: none;
 }
 
-.form-section {
-  margin-left: 50px;
-  margin-right: 50px;
-}
 </style>

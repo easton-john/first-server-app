@@ -19,7 +19,7 @@ app.get('/api/cocktails', (req, res) => {
 
   client.query(`
   SELECT cocktails.id, name, alcohols.id as "alcoholID", alcohols.alcohol, ingredients,
-  garnish, tried, image
+  served, garnish, tried, image
   FROM cocktails
   JOIN alcohols
     ON cocktails.alcohol_id = alcohols.id;
@@ -35,7 +35,7 @@ app.post('/api/cocktails', (req, res) => {
   client.query(`
     INSERT INTO cocktails (name, alcohol_id, ingredients, served, garnish, tried, image)
     VALUES ($1, $2, $3, $4, $5, $6, $7)
-    RETURNING *;
+    RETURNING *, alcohol_id as "alcoholID";
   `,
   [body.name, body.alcoholID, body.ingredients, body.served, body.garnish, body.tried, body.image]
   ).then(result => {
@@ -59,7 +59,7 @@ app.put('/api/cocktails/:id', (req, res) => {
       tried = $6,
       image = $7
     WHERE id = $8
-    RETURNING *;
+    RETURNING *, alcohol_id as "alcoholID";
   `,
   [body.name, body.alcoholID, body.ingredients, body.served, body.garnish, body.tried, body.image, req.params.id]
   ).then(result => {
@@ -78,6 +78,17 @@ app.delete('/api/cocktails/:id', (req, res) => {
     res.send({ removed: true });
   });
   
+});
+
+app.get('/api/alcohols', (req, res) => {
+
+  client.query(`
+    SELECT * 
+    FROM alcohols;
+  `)
+    .then(result => {
+      res.send(result.rows);
+    });
 });
 
 app.listen(3000, () => console.log('server running...'));
