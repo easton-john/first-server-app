@@ -12,7 +12,7 @@
         />
     </ul>
 
-    <section>
+    <section id="form">
       <CocktailForm
       label="Add"
       header="Create a new cocktail"
@@ -96,10 +96,9 @@ div {
   justify-content: space-evenly;
 }
 
-section {
+#form {
   position: sticky;
   top: 30px;
-  margin-top: 15px;
   background: rgba(0, 0, 0, .8);
   border-radius: 5px;
   padding: 15px;
@@ -108,6 +107,7 @@ section {
 
 ul {
   list-style-type: none;
+  -webkit-margin-before: 0;
 }
 
 </style>

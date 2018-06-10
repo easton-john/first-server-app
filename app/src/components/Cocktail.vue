@@ -3,7 +3,7 @@
     <section v-if="!editing">
       <h2>{{ cocktail.name.toUpperCase() }}</h2>
       <img :src="cocktail.image">
-      <p><b>ALCOHOL:</b> {{ alcohol.charAt(0).toUpperCase() + alcohol.slice(1) }}</p>
+      <p><b>ALCOHOL:</b> {{ alcohol }}</p>
       <p><b>MAIN INGREDIENTS: </b> {{ cocktail.ingredients }}</p>
       <p><b>SERVED:</b> {{ cocktail.served }}</p>
       <p><b>STANDARD GARNISH:</b> {{ cocktail.garnish }}</p>
@@ -46,9 +46,16 @@ export default {
   },
 
   methods: {
+
     handleRemove() {
-      return this.onDelete(this.cocktail);
+      if(confirm(`Are you sure you want to remove ${this.cocktail.name}?`)) {
+        return this.onDelete(this.cocktail);
+      }
     },
+
+    // handleRemove() {
+    //   return this.onDelete(this.cocktail);
+    // },
 
     handleUpdate(toUpdate) {
       return this.onUpdate(toUpdate)

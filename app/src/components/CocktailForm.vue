@@ -1,6 +1,6 @@
 <template>
-  <div class="form">
-
+  <div>
+    
     <form @submit.prevent="handleSubmit">
       <h2><b>{{ header.toUpperCase() }}</b></h2>
       <input type="text" placeholder="Name" required v-model="edit.name">
@@ -48,7 +48,7 @@ const initCocktail = () => {
     ingredients: '',
     served: '',
     garnish: '',
-    tried: false,
+    tried: true,
     image: ''
 
   };
@@ -107,12 +107,12 @@ form {
 input {
   font-size: 25px;
   padding-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 select {
   font-size: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 label {

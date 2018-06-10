@@ -28,24 +28,12 @@ html {
   background-attachment: fixed;
 }
 
-body {
-  margin: 0px;
-}
-
-div.cocktail-list-form {
-  position: sticky;
-  top: 20px;
-}
-
 h1 {
   display: flex;
   justify-content: center;
-  align-items: center;
   font-size: 4em;
   font-family: 'Cinzel Decorative', cursive;
   color: mediumseagreen;
-  height: 100px;
-  margin: none;
 }
 
 </style>
