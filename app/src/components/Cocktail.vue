@@ -3,11 +3,11 @@
     <section v-if="!editing">
       <img :src="cocktail.image">
       <h2>{{ cocktail.name.toUpperCase() }}</h2>
-      <p><b>Alcohol:</b> {{ alcohol }}</p>
-      <p><b>Main Ingredients:</b> {{ cocktail.ingredients }}</p>
-      <p><b>Served:</b> {{ cocktail.served }}</p>
-      <p><b>Standard garnish:</b> {{ cocktail.garnish }}</p>
-      <p><b>Tried: </b> <span v-if="cocktail.tried">Yes</span> <span v-else>No</span></p>    
+      <p><b>ALCOHOL:</b> {{ alcohol.charAt(0).toUpperCase() + alcohol.slice(1) }}</p>
+      <p><b>MAIN INGREDIENTS: </b> {{ cocktail.ingredients }}</p>
+      <p><b>SERVED:</b> {{ cocktail.served }}</p>
+      <p><b>STANDARD GARNISH:</b> {{ cocktail.garnish }}</p>
+      <p><b>TRIED: </b> <span v-if="cocktail.tried">Yes</span> <span v-else>No</span></p>    
     </section>
 
     <CocktailForm
@@ -76,16 +76,16 @@ export default {
 
 h2 {
   margin-top: 0px;
-  color: brown;
+  color: lemonchiffon;
 }
 
 li {
-  background: rgb(0, 0, 0, .80);
+  background: rgb(0, 0, 0, .85);
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 30px;
   color: white;
-  font-size: 20px;
+  font-size: 22px;
   font-family: 'Song Myung', serif;
 }
 
@@ -106,7 +106,7 @@ button {
 }
 
 b {
-  color: lightgoldenrodyellow;
+  color: firebrick;
 }
 </style>
 

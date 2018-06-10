@@ -100,7 +100,7 @@ section {
   position: sticky;
   top: 30px;
   margin-top: 15px;
-  background: rgba(0, 0, 0, .80);
+  background: rgba(0, 0, 0, .85);
   border-radius: 5px;
   padding: 15px;
   height: 40%;

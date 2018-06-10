@@ -23,7 +23,7 @@ export default {
 <style>
 
 html {
-  background-image: url('./assets/background-2.jpg');
+  background-image: url('./assets/background.jpg');
   background-size: contain;
   background-attachment: fixed;
 }
@@ -43,7 +43,7 @@ h1 {
   align-items: center;
   font-size: 4em;
   font-family: 'Cinzel Decorative', cursive;
-  color: brown;
+  color: mediumseagreen;
   height: 100px;
   margin: none;
 }

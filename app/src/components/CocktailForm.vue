@@ -10,7 +10,7 @@
           v-for="alcohol in alcohols"
           :key="alcohol.id"
           :value="alcohol.id">
-          {{alcohol.alcohol}}
+          {{alcohol.alcohol.charAt(0).toUpperCase(0) + alcohol.alcohol.slice(1)}}
         </option>
       </select>
 
@@ -86,7 +86,7 @@ export default {
 <style scoped>
 
 h2 {
-  color: mediumseagreen;
+  color: mediumpurple;
   font-size: 25px;
   margin-top: 0px;
 }
@@ -116,7 +116,7 @@ button {
   font-size: 25px;
   margin-bottom: 10px;
   border-radius: 5px;
-  border-color: brown;
-  background: brown;
+  border-color: firebrick;
+  background: firebrick;
 }
 </style>
