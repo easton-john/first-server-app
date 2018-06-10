@@ -23,9 +23,11 @@ export default {
 <style>
 
 html {
-  background-image: url('./assets/background.jpg');
-  background-size: contain;
-  background-attachment: fixed;
+  background: url('./assets/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 h1 {

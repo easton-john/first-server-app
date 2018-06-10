@@ -19,7 +19,6 @@
     :onEdit="handleUpdate"
     />
 
-
     <button @click="editing = !editing">{{ editing ? 'Cancel' : 'Edit' }}</button>
     <button @click="handleRemove" type="submit">Delete</button> 
 
