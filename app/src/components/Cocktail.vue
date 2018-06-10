@@ -1,8 +1,8 @@
 <template>
   <li>
     <section v-if="!editing">
-      <img :src="cocktail.image">
       <h2>{{ cocktail.name.toUpperCase() }}</h2>
+      <img :src="cocktail.image">
       <p><b>ALCOHOL:</b> {{ alcohol.charAt(0).toUpperCase() + alcohol.slice(1) }}</p>
       <p><b>MAIN INGREDIENTS: </b> {{ cocktail.ingredients }}</p>
       <p><b>SERVED:</b> {{ cocktail.served }}</p>
@@ -76,17 +76,18 @@ export default {
 
 h2 {
   margin-top: 0px;
-  color: lemonchiffon;
+  margin-bottom: 10px;
+  color: wheat;
   font-weight: bold;
 }
 
 li {
-  background: rgb(0, 0, 0, .85);
+  background: rgb(0, 0, 0, .8);
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 30px;
   color: white;
-  font-size: 22px;
+  font-size: 20px;
   font-family: 'Architects Daughter', cursive;
 }
 
@@ -95,12 +96,12 @@ p {
 }
 
 img {
-  float: right;
+  /* float: right; */
   width: 225px;
 }
 
 button {
-  margin-top: 10px;
+  margin-top: 15px;
   margin-right: 10px;
   font-size: 15px;
   border-radius: 5px;

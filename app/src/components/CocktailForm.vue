@@ -15,9 +15,16 @@
       </select>
 
       <input type="text" placeholder="Ingredients" required v-model="edit.ingredients">
-      <input type="text" placeholder="Served" v-model="edit.served">
-      <input type="text" placeholder="Garnish" v-model="edit.garnish">
-      <input type="text" placeholder="Enter image url" v-model="edit.image">
+      <select v-model.number="edit.served">
+        <option disabled value="">Served</option>
+        <option>On the rocks</option>
+        <option>Straight</option>
+        <option>Shaken</option>
+        <option>Blended</option>
+      </select>
+      <!-- <input type="text" placeholder="Served" v-model="edit.served"> -->
+      <input type="text" placeholder="Garnish (optional)" v-model="edit.garnish">
+      <input type="text" placeholder="Enter image url (optional)" v-model="edit.image">
       
       <label>Tried:
       <input type="radio" value="true" v-model="edit.tried"> Yes
