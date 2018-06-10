@@ -2,7 +2,7 @@
   <div class="form">
 
     <form @submit.prevent="handleSubmit">
-      <h2> {{ header }} </h2>
+      <h2><b>{{ header.toUpperCase() }}</b></h2>
       <input type="text" placeholder="Name" required v-model="edit.name">
       <select v-model.number="edit.alcoholID">
         <option disabled value="">Main Liquor</option>
@@ -85,27 +85,38 @@ export default {
 
 <style scoped>
 
+h2 {
+  color: mediumseagreen;
+  font-size: 25px;
+  margin-top: 0px;
+}
+
 form {
   display: flex;
   flex-direction: column;
 }
 
 input {
-  font-size: 20px;
+  font-size: 25px;
+  padding-left: 10px;
   margin-bottom: 10px;
 }
 
 select {
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 10px;
 }
 
 label {
-  font-size: 20px;
+  font-size: 25px;
+  color: white;
 }
 
 button {
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 10px;
+  border-radius: 5px;
+  border-color: brown;
+  background: brown;
 }
 </style>

@@ -2,7 +2,7 @@
   <li>
     <section v-if="!editing">
       <img :src="cocktail.image">
-      <h2><b>{{ cocktail.name }}</b></h2>
+      <h2>{{ cocktail.name.toUpperCase() }}</h2>
       <p><b>Alcohol:</b> {{ alcohol }}</p>
       <p><b>Main Ingredients:</b> {{ cocktail.ingredients }}</p>
       <p><b>Served:</b> {{ cocktail.served }}</p>
@@ -21,7 +21,7 @@
 
 
     <button @click="editing = !editing">{{ editing ? 'Cancel' : 'Edit' }}</button>
-    <button @click="handleRemove" type="submit">DELETE</button> 
+    <button @click="handleRemove" type="submit">Delete</button> 
 
   </li>
 </template>
@@ -74,19 +74,40 @@ export default {
 
 <style scoped>
 
+h2 {
+  margin-top: 0px;
+  color: brown;
+}
+
 li {
-  margin-bottom: 50px;
+  background: rgb(0, 0, 0, .80);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Song Myung', serif;
+}
+
+p {
+  margin: 0px;
 }
 
 img {
   float: right;
-  width: 250px;
+  width: 225px;
 }
 
 button {
+  margin-top: 10px;
   margin-right: 10px;
+  font-size: 15px;
+  border-radius: 5px;
 }
 
+b {
+  color: lightgoldenrodyellow;
+}
 </style>
 
 

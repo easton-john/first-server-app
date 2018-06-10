@@ -22,9 +22,30 @@ export default {
 
 <style>
 
+html {
+  background-image: url('./assets/background-2.jpg');
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+body {
+  margin: 0px;
+}
+
+div.cocktail-list-form {
+  position: sticky;
+  top: 20px;
+}
+
 h1 {
-  text-align: center;
-  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  font-family: 'Cinzel Decorative', cursive;
+  color: brown;
+  height: 100px;
+  margin: none;
 }
 
 </style>

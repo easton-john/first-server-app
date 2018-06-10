@@ -1,5 +1,5 @@
 <template>
-  <div class="cocktail">
+  <div class="cocktail-list">
 
     <ul class="cocktail-section">
       <Cocktail
@@ -12,12 +12,14 @@
         />
     </ul>
 
-    <CocktailForm
-    label="Add"
-    header="Create a new cocktail"
-    :onEdit="handleAdd"
-    />
-
+    <section>
+      <CocktailForm
+      label="Add"
+      header="Create a new cocktail"
+      :onEdit="handleAdd"
+      />
+    </section>
+   
   </div>
 </template>
 
@@ -92,6 +94,16 @@ export default {
 div {
   display: flex;
   justify-content: space-evenly;
+}
+
+section {
+  position: sticky;
+  top: 30px;
+  margin-top: 15px;
+  background: rgba(0, 0, 0, .80);
+  border-radius: 5px;
+  padding: 15px;
+  height: 40%;
 }
 
 ul {
