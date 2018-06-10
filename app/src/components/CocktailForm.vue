@@ -94,6 +94,7 @@ h2 {
 form {
   display: flex;
   flex-direction: column;
+  font-family: 'Architects Daughter', cursive;
 }
 
 input {

@@ -77,6 +77,7 @@ export default {
 h2 {
   margin-top: 0px;
   color: lemonchiffon;
+  font-weight: bold;
 }
 
 li {
@@ -86,7 +87,7 @@ li {
   margin-bottom: 30px;
   color: white;
   font-size: 22px;
-  font-family: 'Song Myung', serif;
+  font-family: 'Architects Daughter', cursive;
 }
 
 p {
