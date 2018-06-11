@@ -18,11 +18,9 @@ client.connect();
 app.get('/api/cocktails', (req, res) => {
 
   client.query(`
-  SELECT cocktails.id, name, alcohols.id as "alcoholID", alcohols.alcohol, ingredients,
+  SELECT id, name, alcohol_id as "alcoholID", ingredients,
   served, garnish, tried, image
-  FROM cocktails
-  JOIN alcohols
-    ON cocktails.alcohol_id = alcohols.id;
+  FROM cocktails;
   `).then(result => {
     res.send(result.rows);
   });
