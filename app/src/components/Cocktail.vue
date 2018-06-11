@@ -83,12 +83,12 @@ export default {
 h2 {
   margin-top: 0px;
   margin-bottom: 10px;
-  color: wheat;
+  color: firebrick;
   font-weight: bold;
 }
 
 li {
-  background: rgb(0, 0, 0, .8);
+  background: rgb(0, 0, 0, .85);
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 30px;
@@ -102,7 +102,6 @@ p {
 }
 
 img {
-  /* float: right; */
   width: 225px;
 }
 
@@ -114,7 +113,7 @@ button {
 }
 
 b {
-  color: firebrick;
+  color: peru;
 }
 </style>
 

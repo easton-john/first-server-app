@@ -1,7 +1,7 @@
 <template>
-  <div class="cocktail-list">
+  <div>
 
-    <ul class="cocktail-section">
+    <ul>
       <Cocktail
         v-for="cocktail in cocktails"
         :key="cocktail.name"
@@ -99,7 +99,7 @@ div {
 #form {
   position: sticky;
   top: 30px;
-  background: rgba(0, 0, 0, .8);
+  background: rgba(0, 0, 0, .85);
   border-radius: 5px;
   padding: 15px;
   height: 40%;
